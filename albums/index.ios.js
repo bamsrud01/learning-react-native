@@ -1,11 +1,17 @@
+//  With React Native, only a single component is created per file.
+    //  Others in src/components
+
 //  Import React and React Native libraries
     //  Destructure ReactNative import to specify needed properties
 import React from 'react';
-import { Text, AppRegistry } from 'react-native';
+import { AppRegistry } from 'react-native';
+
+//  Import album components
+import Header from './src/components/header';
 
 //  Create a Component (using arrow function)
 const App = () => (
-  <Text>Some text</Text>
+  <Header />
 );
 
 
