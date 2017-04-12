@@ -4,15 +4,20 @@
 //  Import React and React Native libraries
     //  Destructure ReactNative import to specify needed properties
 import React from 'react';
-import { AppRegistry } from 'react-native';
+import { AppRegistry, View } from 'react-native';
 
 //  Import album components
 import Header from './src/components/Header';
+import AlbumList from './src/components/AlbumList';
 
 //  Create a Component (using arrow function)
 const App = () => (
+  //  Components must return a single top-level element
   //  Use headerText prop to dynamically change content of <Header>
-  <Header headerText={'Albums!'} />
+  <View>
+    <Header headerText={'Albums!'} />
+    <AlbumList />
+  </View>
 );
 
 
@@ -22,3 +27,5 @@ const App = () => (
 AppRegistry.registerComponent('albums', () => App);
 
 //  To run in Terminal, from project directory: react-native run-ios
+    //  Refresh with command+R
+    //  Debug with command+D
