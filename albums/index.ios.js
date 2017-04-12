@@ -7,7 +7,7 @@ import React from 'react';
 import { AppRegistry } from 'react-native';
 
 //  Import album components
-import Header from './src/components/header';
+import Header from './src/components/Header';
 
 //  Create a Component (using arrow function)
 const App = () => (
