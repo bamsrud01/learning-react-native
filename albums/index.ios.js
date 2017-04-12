@@ -11,13 +11,14 @@ import Header from './src/components/header';
 
 //  Create a Component (using arrow function)
 const App = () => (
-  <Header />
+  //  Use headerText prop to dynamically change content of <Header>
+  <Header headerText={'Albums!'} />
 );
 
 
 //  Render component to device
     //  Name of the string in first argument must match the project name
-    //  Use implicit return in arrow function to return app
+    //  Use implicit return in arrow function to return app as second argument
 AppRegistry.registerComponent('albums', () => App);
 
 //  To run in Terminal, from project directory: react-native run-ios
