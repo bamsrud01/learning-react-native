@@ -4,6 +4,9 @@
 
 ## Contents
 
+  01. Albums
+  
+
 ## Author
 
 - Barrett Amsrud
