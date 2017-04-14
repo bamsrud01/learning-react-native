@@ -1,7 +1,10 @@
 //  Import libraries
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import axios from 'axios';
+
+//  Import components
+import AlbumDetail from './AlbumDetail';
 
 //  Create component (requires a render method returning JSX)
 class AlbumList extends Component {
@@ -19,7 +22,10 @@ class AlbumList extends Component {
   //  Helper method to generate album details
   renderAlbums() {
     //  Map over album data using state
-    return this.state.albums.map(album => <Text>{album.title}</Text>);
+    return this.state.albums.map(album =>
+      //  Pass album information as props
+      <AlbumDetail key={album.title} album={album} />
+    );
   }
 
   //  Render method, returning JSX
