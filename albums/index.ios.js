@@ -14,7 +14,7 @@ import AlbumList from './src/components/AlbumList';
 const App = () => (
   //  Components must return a single top-level element
   //  Use headerText prop to dynamically change content of <Header>
-  <View>
+  <View style={{ flex: 1 }}>
     <Header headerText={'Albums!'} />
     <AlbumList />
   </View>

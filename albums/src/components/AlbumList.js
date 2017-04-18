@@ -1,6 +1,6 @@
 //  Import libraries
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import axios from 'axios';
 
 //  Import components
@@ -31,10 +31,12 @@ class AlbumList extends Component {
   //  Render method, returning JSX
   render() {
     console.log('State:', this.state);
+
+    //  Must make this scrollable by using <ScrollView> instead of <View>
     return (
-      <View>
+      <ScrollView>
         {this.renderAlbums()}
-      </View>
+      </ScrollView>
     );
   }
 }
