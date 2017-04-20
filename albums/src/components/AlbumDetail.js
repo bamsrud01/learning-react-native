@@ -5,6 +5,7 @@ import { Text, View, Image } from 'react-native';
 //  Import components
 import Card from './Card';
 import CardSection from './CardSection';
+import Button from './Button';
 
 //  Create component (functional)
     //  Album information passed to component using props.album
@@ -34,6 +35,9 @@ const AlbumDetail = ({ album }) => {
       </CardSection>
       <CardSection>
         <Image style={imageStyle} source={{ uri: image }} />
+      </CardSection>
+      <CardSection>
+        <Button />
       </CardSection>
     </Card>
   );
