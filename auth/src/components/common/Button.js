@@ -38,4 +38,4 @@ const styles = {
 };
 
 //  Export component
-export default Button;
+export { Button };

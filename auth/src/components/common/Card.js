@@ -31,4 +31,4 @@ const styles = {
 };
 
 //  Export component
-export default Card;
+export { Card };

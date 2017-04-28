@@ -25,4 +25,4 @@ const styles = {
 };
 
 //  Export component
-export default CardSection;
+export { CardSection };
