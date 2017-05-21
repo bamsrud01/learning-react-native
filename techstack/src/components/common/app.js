@@ -6,15 +6,12 @@ import { createStore } from 'redux';
 
 //  Import components and files
 import reducers from './reducers';
-import { Header } from './components/common';
 
 //  Create App component
 const App = () => {
   return (
     <Provider store={createStore(reducers)}>
-      <View>
-        <Header headerText="Tech Stack" />
-      </View>
+      <View />
     </Provider>
   );
 };
