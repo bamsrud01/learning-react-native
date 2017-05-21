@@ -1,11 +1,18 @@
 //  Import libraries
 import React from 'react';
 import { View } from 'react-native';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
+//  Import components and files
+import reducers from './reducers';
 
 //  Create App component
 const App = () => {
   return (
-    <View />
+    <Provider store={createStore(reducers)}>
+      <View />
+    </Provider>
   );
 };
 
