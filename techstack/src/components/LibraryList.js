@@ -16,6 +16,7 @@ class LibraryList extends Component {
   }
 
   renderRow(library) {
+    console.log('Library:', library);
     return <ListItem library={library} />;
   }
 
@@ -31,7 +32,7 @@ class LibraryList extends Component {
 
 //  Function to take global state object and provide props for component
 const mapStateToProps = state => {
-  return { libaries: state.libraries };
+  return { libraries: state.libraries };
 };
 
 //  Export component using connect (returns a function)
