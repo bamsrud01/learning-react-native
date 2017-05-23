@@ -7,6 +7,7 @@ import { createStore } from 'redux';
 //  Import components and files
 import reducers from './reducers';
 import { Header } from './components/common';
+import LibraryList from './components/LibraryList';
 
 //  Create App component
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
     <Provider store={createStore(reducers)}>
       <View>
         <Header headerText="Tech Stack" />
+        <LibraryList />
       </View>
     </Provider>
   );
