@@ -16,7 +16,6 @@ class LibraryList extends Component {
   }
 
   renderRow(library) {
-    console.log('Library:', library);
     return <ListItem library={library} />;
   }
 
