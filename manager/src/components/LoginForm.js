@@ -1,13 +1,15 @@
 //  Import libraries
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-//  Import components
+//  Import components and actions
 import { Card, CardSection, Input, Button } from './common';
+import { emailChanged } from '../actions';
 
 //  Create component
 class LoginForm extends Component {
   onEmailChange(text) {
-    
+    this.props.emailChanged(text);
   }
 
   render() {
@@ -40,4 +42,4 @@ class LoginForm extends Component {
 }
 
 //  Export component
-export default LoginForm;
+export default connect(null, { emailChanged })(LoginForm);
