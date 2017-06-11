@@ -50,9 +50,10 @@ class LoginForm extends Component {
 
 const mapStateToProps = state => {
   return {
-    email: state.auth.email
+    email: state.auth.email,
+    password: state.auth.password
   };
 };
 
 //  Export component
-export default connect(mapStateToProps, { emailChanged })(LoginForm);
+export default connect(mapStateToProps, { emailChanged, passwordChanged })(LoginForm);
