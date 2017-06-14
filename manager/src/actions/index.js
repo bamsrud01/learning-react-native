@@ -1,5 +1,6 @@
 //  Import libraries
 import firebase from 'firebase';
+import { Actions } from 'react-native-router-flux';
 
 //  Import action types
 import {
@@ -34,7 +35,10 @@ export const loginUser = ({ email, password }) => {
       .catch(() => {
         firebase.auth().createUserWithEmailAndPassword(email, password)
           .then(user => loginUserSuccess(dispatch, user))
-          .catch(() => loginUserFail(dispatch));
+          .catch((error) => {
+            console.log('Error:', error);
+            loginUserFail(dispatch);
+          });
       });
   };
 };
@@ -45,6 +49,8 @@ const loginUserSuccess = (dispatch, user) => {
     type: LOGIN_USER_SUCCESS,
     payload: user
   });
+
+  Actions.employeeList();
 };
 
 const loginUserFail = (dispatch) => {
