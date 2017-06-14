@@ -8,7 +8,7 @@ import LoginForm from './components/LoginForm';
 //  Create component
 const RouterComponent = () => {
   return (
-    <Router>
+    <Router sceneStyle={{ paddingTop: 65 }}>
       <Scene key="login" component={LoginForm} title="Please Login" />
     </Router>
   );
