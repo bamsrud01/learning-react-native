@@ -5,7 +5,7 @@ import { View } from 'react-native';
 //  Create component (functional)
 const CardSection = (props) => {
   return (
-    <View style={styles.containerStyle}>
+    <View style={[styles.containerStyle, props.style]}>
       {props.children}
     </View>
   );
