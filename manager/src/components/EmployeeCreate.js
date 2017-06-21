@@ -1,5 +1,6 @@
 //  Import libraries
 import React, { Component } from 'react';
+import { Picker } from 'react-native';
 import { connect } from 'react-redux';
 
 //  Import components and actions
@@ -30,6 +31,19 @@ class EmployeeCreate extends Component {
         </CardSection>
 
         <CardSection>
+          <Picker
+            style={{ flex: 1 }}
+            selectedValue={this.props.shift}
+            onValueChange={value => this.props.employeeUpdate({ prop: 'shift', value })}
+          >
+            <Picker.Item label="Monday" value="Monday" />
+            <Picker.Item label="Tuesday" value="Tuesday" />
+            <Picker.Item label="Wednesday" value="Wednesday" />
+            <Picker.Item label="Thursday" value="Thursday" />
+            <Picker.Item label="Friday" value="Friday" />
+            <Picker.Item label="Saturday" value="Saturday" />
+            <Picker.Item label="Sunday" value="Sunday" />
+          </Picker>
         </CardSection>
 
         <CardSection>
