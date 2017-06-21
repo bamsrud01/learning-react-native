@@ -1,8 +1,10 @@
 //  Import libraries
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-//  Import components
+//  Import components and actions
 import { Card, CardSection, Input, Button } from './common';
+import { employeeUpdate } from '../actions';
 
 //  Create components
 class EmployeeCreate extends Component {
@@ -13,6 +15,8 @@ class EmployeeCreate extends Component {
           <Input
             label="Name"
             placeholder="Jane"
+            value={this.props.name}
+            onChangeText={value => this.props.employeeUpdate({ prop: 'name', value })}
           />
         </CardSection>
 
@@ -20,6 +24,8 @@ class EmployeeCreate extends Component {
           <Input
             label="Phone"
             placeholder="111-555-1234"
+            value={this.props.phone}
+            onChangeText={value => this.props.employeeUpdate({ prop: 'phone', value })}
           />
         </CardSection>
 
@@ -36,4 +42,10 @@ class EmployeeCreate extends Component {
   }
 }
 
-export default EmployeeCreate;
+const mapStateToProps = (state) => {
+  const { name, phone, shift } = state.employeeForm;
+  return { name, phone, shift };
+};
+
+//  Export component
+export default connect(mapStateToProps, { employeeUpdate })(EmployeeCreate);
