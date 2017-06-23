@@ -5,7 +5,7 @@ import { Actions } from 'react-native-router-flux';
 //  Import types
 import {
   EMPLOYEE_UPDATE,
-  // EMPLOYEE_CREATE
+  EMPLOYEE_CREATE
 } from './types';
 
 //  Create and export actions
@@ -19,10 +19,11 @@ export const employeeUpdate = ({ prop, value }) => {
 export const employeeCreate = ({ name, phone, shift }) => {
   const { currentUser } = firebase.auth();
 
-  return () => {
+  return (dispatch) => {
     firebase.database().ref(`/users/${currentUser.uid}/employees`)
       .push({ name, phone, shift })
       .then(() => {
+        dispatch({ type: EMPLOYEE_CREATE });
         Actions.employeeList({ type: 'reset' });
       });
   };
