@@ -1,7 +1,10 @@
+//  Import firebase
+import firebase from 'firebase';
+
 //  Import types
 import {
   EMPLOYEE_UPDATE,
-  EMPLOYEE_CREATE
+  // EMPLOYEE_CREATE
 } from './types';
 
 //  Create and export actions
@@ -13,5 +16,7 @@ export const employeeUpdate = ({ prop, value }) => {
 };
 
 export const employeeCreate = ({ name, phone, shift }) => {
-  console.log(name, phone, shift);
+  const { currentUser } = firebase.auth();
+  firebase.database().ref(`/users/${currentUser.uid}/employees`)
+    .push({ name, phone, shift });
 };
