@@ -7,7 +7,7 @@ import _ from 'lodash';
 //  Import components and actions
 import { Card, CardSection, Button, Confirm } from './common';
 import EmployeeForm from './EmployeeForm';
-import { employeeUpdate, employeeSave } from '../actions';
+import { employeeUpdate, employeeSave, employeeDelete } from '../actions';
 
 //  Create component
 class EmployeeEdit extends Component {
@@ -30,7 +30,9 @@ class EmployeeEdit extends Component {
   }
 
   onAccept() {
+    const { uid } = this.props.employee;
 
+    this.props.employeeDelete({ uid });
   }
 
   onDecline() {
@@ -82,5 +84,6 @@ const mapStateToProps = (state) => {
 //  Export component
 export default connect(mapStateToProps, {
   employeeUpdate,
-  employeeSave
+  employeeSave,
+  employeeDelete
 })(EmployeeEdit);
